@@ -23,7 +23,7 @@
 
   <div class="course-description">{{ course.longDescription }}</div>
 
-  <div class="course-category">
+  <ng-container class="course-category">
     @switch (course.category) {
       @case ("BEGINNER") {
         <div class="category">Beginner</div>
@@ -38,7 +38,7 @@
         <div class="category">Unknown</div>
       }
     }
-  </div>
+  </ng-container>
 
   <!-- <div class="course-category" [ngSwitch]="course.category">
     <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
