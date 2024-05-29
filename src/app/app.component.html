@@ -1,14 +1,31 @@
 <div class="top-menu">
-
-    <img class="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
-
+  <img
+    class="logo"
+    src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
+  />
 </div>
 
-
 <div class="courses">
-
-    <course-card (courseSelected)="onCourseSelected($event)" [course]="coreCourse"></course-card>
-    <course-card (courseSelected)="onCourseSelected($event)" [course]="rxjsCourse"></course-card>
-    <course-card (courseSelected)="onCourseSelected($event)" [course]="ngrxCourse"></course-card>
-
+  @for (
+    course of courses;
+    track course.id;
+    let index = $index;
+    let count = $count;
+    let first = $first;
+    let last = $last;
+    let odd = $odd;
+    let even = $even
+  ) {
+    <course-card
+      [course]="course"
+      [index]="$index"
+      [class.is-first]="$first"
+      [class.is-last]="last"
+      [class.is-odd]="odd"
+      [class.is-even]="even"
+      (courseSelected)="onCourseSelected($event)"
+    />
+  } @empty {
+    <h1>No courses found!</h1>
+  }
 </div>
