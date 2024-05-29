@@ -18,6 +18,10 @@ export class CourseCardComponent {
   @Output("courseSelected")
   courseEmitter = new EventEmitter<Course>();
 
+  isImageVisible() {
+    return this.course && this.course.iconUrl;
+  }
+
   onCourseViewed() {
     console.log("Card component - button clicked ... ");
     this.courseEmitter.emit(this.course);
