@@ -11,4 +11,8 @@ export class AppComponent {
   coreCourse: Course = COURSES[0];
   rxjsCourse: Course = COURSES[1];
   ngrxCourse: Course = COURSES[2];
+
+  onCourseSelected(course: Course) {
+    console.log("App component - click event bubbled... ", course);
+  }
 }
