@@ -1,4 +1,4 @@
-<div *ngIf="course" class="course-card">
+<div *ngIf="course" class="course-card" [ngClass]="cardClasses()">
   <div class="course-title">{{ index }} {{ course.description }}</div>
 
   @if (course.id == 1) {
