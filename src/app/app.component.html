@@ -6,7 +6,7 @@
 </div>
 
 <div class="courses">
-  <course-card
+  <!-- <course-card
     *ngFor="
       let course of courses;
       index as i;
@@ -22,9 +22,9 @@
     [class.is-odd]="isOdd"
     [class.is-even]="isEven"
     (courseSelected)="onCourseSelected($event)"
-  />
+  /> -->
 
-  <!-- @for (
+  @for (
     course of courses;
     track course.id;
     let index = $index;
@@ -45,5 +45,5 @@
     />
   } @empty {
     <h1>No courses found!</h1>
-  } -->
+  }
 </div>
